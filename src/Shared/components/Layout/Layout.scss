@@ -1,0 +1,9 @@
+.layout {
+  background: $backgroundColor;
+}
+
+.content-wrapper {
+  background-color: $bg-main;
+  z-index: 0;
+  margin-left: $drawerMenuWidth;
+}

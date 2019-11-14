@@ -1,0 +1,51 @@
+.table {
+  th,
+  td {
+    vertical-align: middle;
+
+    &:first-child {
+      padding-left: 20px;
+    }
+
+    &:last-child {
+      padding-right: 20px;
+    }
+  }
+
+  .label {
+    color: $secondary;
+  }
+
+  th {
+    font-weight: $font-weight-semibold;
+    font-size: rem(12);
+    color: $secondary;
+    text-transform: uppercase;
+  }
+
+  tbody {
+    background-color: $white;
+  }
+
+  &-bordered thead th {
+    border-color: transparent;
+    border-bottom: 1px solid $border-color;
+  }
+
+  &-bordered {
+    th,
+    td {
+      &:last-child {
+        width: 22%;
+      }
+    }
+
+    td {
+      border-right-color: $white;
+
+      &:last-child {
+        border-right-color: $border-color;
+      }
+    }
+  }
+}

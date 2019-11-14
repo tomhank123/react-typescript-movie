@@ -1,0 +1,25 @@
+.form-control {
+  font-size: rem(15);
+}
+
+.form-group-search {
+  position: relative;
+  min-width: rem(280);
+
+  .btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 36px;
+    width: 45px;
+    color: $secondary;
+  }
+
+  .btn-icon {
+    font-size: rem(15);
+  }
+
+  .form-control {
+    padding-right: 50px;
+  }
+}

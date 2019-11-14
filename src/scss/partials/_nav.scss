@@ -1,0 +1,12 @@
+.nav-link {
+  font-size: rem(14);
+
+  &.logo {
+    padding-top: rem(6);
+    padding-bottom: rem(6);
+  }
+}
+
+.nav-link-other {
+  color: $secondary;
+}

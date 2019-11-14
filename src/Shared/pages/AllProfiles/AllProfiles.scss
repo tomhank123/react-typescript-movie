@@ -1,0 +1,37 @@
+.all-profiles-page {
+  .top-bar-filter {
+    .form-control {
+      padding-top: 8px;
+      padding-bottom: 8px;
+      height: 36px;
+    }
+  }
+
+  .table-fixed {
+    overflow-y: auto;
+    min-height: 300px;
+    max-height: calc(100vh - #{$drawerHeight});
+
+    > table,
+    .ScrollbarsCustom-Content > table {
+      border: 0 none;
+    }
+
+    &.ScrollbarsCustom {
+      height: calc(100vh - #{$drawerHeight}) !important;
+    }
+  }
+
+  .table-fixed > table > thead > tr > th,
+  .table-fixed .ScrollbarsCustom-Content > table > thead > tr > th {
+    position: sticky;
+    top: 0;
+    background-color: $bg-main;
+    border: 0 none;
+    z-index: 100;
+
+    &:last-child {
+      border-right: 1px solid $bg-main;
+    }
+  }
+}

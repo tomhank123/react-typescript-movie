@@ -1,0 +1,9 @@
+export const ROUTE_HOME = "/";
+export const ROUTE_LOGIN = "/login";
+export const ROUTE_REGISTER_ACCOUNT = "/register-account";
+export const ROUTE_REGISTER_COMPANY = "/register-company";
+export const ROUTE_OVERVIEW = "/";
+export const ROUTE_ALL_FORM = "/all-form";
+export const ROUTE_ALL_PROFILE = "/all-profile";
+export const ROUTE_CLIENT = "/client";
+export const ROUTE_APPLICATIONS = "/applications";

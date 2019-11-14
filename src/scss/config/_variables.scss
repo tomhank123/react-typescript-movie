@@ -1,0 +1,171 @@
+//
+// Color system
+//
+
+// stylelint-disable
+$white: #fff;
+$gray-100: #f8f9fa;
+$gray-200: #e9ecef;
+$gray-300: #dfe2e5; //#dee2e6;
+$gray-400: #dfe3e9; //#ced4da;
+$gray-500: #adb5bd;
+$gray-600: #7f8fa4; //#6c757d;
+$gray-700: #495057;
+$gray-800: #354052; //#343a40;
+$gray-900: #454b60; //#212529;
+$black: #000;
+
+$blue: #007bff;
+$indigo: #6610f2;
+$purple: #6f42c1;
+$pink: #f07b90; // #e83e8c;
+$red: #dc3545;
+$orange: #ff9b3f; // #fd7e14;
+$yellow: #fad587; // #ffc107;
+$green: #82ce8d; // #28a745;
+$teal: #20c997;
+$cyan: #2196ef; // #17a2b8;
+
+$primary: $orange;
+$secondary: $gray-600;
+$success: $green;
+$info: $cyan;
+$warning: $yellow;
+$danger: $pink;
+$light: $gray-100;
+$dark: $gray-800;
+
+$body-color: $gray-800;
+$title-color: $gray-900;
+
+$input-color: $body-color;
+$input-border-color: $gray-400;
+$input-placeholder-color: $body-color;
+
+$navbar-light-color: $gray-600;
+
+$backgroundColor: #fff;
+$color-purple: #7846c2;
+$color-dark-purple: #3c268d;
+$color-darkest-purple: #151c37;
+$color-light-gray: #eee;
+$color-tertiary-text: #999;
+$color-secondary-text: #333;
+$color-white: #fff;
+$color-red: red;
+$color-black: black;
+$color-disabled: #e9e9e9;
+$bg-scroll: #9a9a9a;
+$bg-main: #eff3f6;
+$color-scroll: #ebebeb;
+
+$child-bg: #f3f5f6;
+$bg-table-child: $child-bg;
+$box-shadow-table: inset 0 2px 4px rgba($black, 0.09);
+
+$drawer-background-color: #111;
+
+$title-color: #354052;
+$border-color: #dee2e6;
+$bg-login: #eff3f6;
+$bg-login-banner: #49515d;
+$bg-register-header: #1a2e3d;
+$bg-register-icon: #1ea3fc;
+$bg-badge-approved: #82ce8d;
+$bg-badge-pending: #f8d57b;
+$bg-badge-denied: #f07b90;
+$bg-submit: #3fa2f7;
+$color-line: #e8e8e8;
+$color-important: #e51322;
+$primary-active: #0062cc;
+$box-shadow-primary: 0 0 0 0.2rem rgba(38, 143, 255, 0.5);
+
+// Gradient Primary Color
+$bg-gradient-primary-1: #ffb46d;
+$bg-gradient-primary-2: #ff8738;
+$border-primary-color: #f36a19;
+$border-primary-hover: #ff9d63;
+$orange-light: #ffe8d7;
+
+// Gradient secondary Color
+$bg-gradient-secondary-1: $white;
+$bg-gradient-secondary-2: #f2f4f7;
+$border-secondary-color: $gray-300;
+$border-secondary-hover: $gray-300;
+$secondary-light: $secondary;
+
+$font-family-base: "Open Sans", sans-serif;
+
+$font-size-base-px: 16;
+$font-size-base: 1rem; // Assumes the browser default, typically `15px`
+
+$font-weight-light: 300 !default;
+$font-weight-normal: 400 !default;
+$font-weight-semibold: 600 !default;
+$font-weight-bold: 700 !default;
+
+$line-height-base: (20 / $font-size-base-px) !default;
+
+$font-size-lg: $font-size-base * (20 / $font-size-base-px);
+$font-size-md: $font-size-base * (14 / $font-size-base-px);
+$font-size-sm: $font-size-base * (10 / $font-size-base-px);
+
+$h1-font-size: $font-size-base * 2.5 !default; //
+$h2-font-size: $font-size-base * 2 !default;
+$h3-font-size: $font-size-base * 1.75 !default;
+$h4-font-size: $font-size-base * (24 / $font-size-base-px); // 1.5 !default;
+$h5-font-size: $font-size-base * (20 / $font-size-base-px); // 1.25 !default;
+$h6-font-size: $font-size-base !default;
+
+$input-btn-padding-y: 0.5rem;
+$input-btn-padding-x: 1.5625rem;
+
+$input-padding-y: 0.625rem;
+$input-padding-x: 1rem;
+
+$bg-gradient-primary: linear-gradient(
+  180deg,
+  $bg-gradient-primary-1 0%,
+  $bg-gradient-primary-2 100%
+);
+$bg-primary-hover: rgba($orange-light, 0.15);
+
+$bg-gradient-secondary: linear-gradient(
+  180deg,
+  $bg-gradient-secondary-1 0%,
+  $bg-gradient-secondary-2 100%
+);
+$bg-secondary-hover: rgba($secondary-light, 0.15);
+
+$input-btn-padding-y: 0.5rem;
+$input-btn-padding-x: 0.9375rem;
+
+$form-feedback-valid-color: $info;
+$form-feedback-invalid-color: $danger;
+$form-feedback-icon-valid: "";
+$form-feedback-icon-invalid: "";
+
+$bg-gradient-primary: linear-gradient(
+  180deg,
+  $bg-gradient-primary-1 0%,
+  $bg-gradient-primary-2 100%
+);
+
+// Width
+$drawerMenuWidth: 250px;
+$drawerHeight: 160px;
+
+$headerHeight: 60px;
+$logoHeight: 75px;
+
+$scrollbar-track-bg: $gray-300;
+$scrollbar-track-width: 8px;
+$scrollbar-track-height: 100%;
+$scrollbar-track-radius: 0;
+
+$scrollbar-thumb-bg: $gray-600;
+$scrollbar-thumb-width: 8px;
+$scrollbar-thumb-radius: rem(4);
+
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
