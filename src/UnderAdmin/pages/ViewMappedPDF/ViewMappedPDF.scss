@@ -1,0 +1,39 @@
+$tableHeight: 41px;
+
+.all-mapped-pdf-page {
+  .table-fixed {
+    overflow-y: auto;
+    min-height: 300px;
+    max-height: calc(100vh - #{$drawerHeight + $tableHeight});
+
+    > table,
+    .ScrollbarsCustom-Content > table {
+      border: 0 none;
+    }
+
+    &.ScrollbarsCustom {
+      height: calc(100vh - #{$drawerHeight + $tableHeight}) !important;
+    }
+  }
+
+  .table-fixed > table > thead > tr > th,
+  .table-fixed .ScrollbarsCustom-Content > table > thead > tr > th {
+    position: sticky;
+    top: 0;
+    background-color: $bg-main;
+    border: 0 none;
+    z-index: 100;
+
+    &:last-child {
+      border-right: 1px solid $bg-main;
+    }
+  }
+
+  .col-pdf-name {
+    width: 30%;
+  }
+
+  .col-date {
+    width: 20%;
+  }
+}

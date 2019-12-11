@@ -1,0 +1,49 @@
+.modal-deactivated-account {
+  .modal-content {
+    border: 0 none;
+  }
+
+  .modal-body {
+    padding: 40px 50px;
+    font-size: rem(15);
+    text-align: center;
+  }
+
+  .img {
+    position: relative;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 250px;
+    height: 250px;
+    margin-top: 40px;
+
+    &::before {
+      content: '';
+      background-color: $table-accent-bg;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      transform: scale(1.1) translateY(-5%);
+      border-radius: 50%;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      object-fit: cover;
+      width: 90%;
+      height: 90%;
+      margin-top: 10%;
+      position: relative;
+    }
+  }
+
+  @include media-breakpoint-up(sm) {
+    .modal-dialog {
+      max-width: 680px;
+    }
+  }
+}

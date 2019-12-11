@@ -1,0 +1,18 @@
+.terms-module {
+  &.layout {
+    background: $bg-login;
+    display: block;
+  }
+
+  .full-height {
+    display: block;
+  }
+
+  .custom-control {
+    label {
+      font-weight: $font-weight-normal;
+      font-size: rem(14);
+      text-transform: unset;
+    }
+  }
+}

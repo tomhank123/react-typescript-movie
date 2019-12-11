@@ -1,0 +1,33 @@
+.u404-module {
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  .img-logo {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+  }
+
+  .modal-content {
+    border: 0 none;
+  }
+
+  .img-rain {
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    left: 50%;
+    transform: translate(-15%, -40%);
+  }
+
+  .img-404 {
+    position: relative;
+    z-index: 1;
+  }
+
+  @include media-breakpoint-up(sm) {
+    .modal-dialog {
+      max-width: 800px;
+    }
+  }
+}

@@ -1,0 +1,45 @@
+.overview-module {
+  .overview-chart-wrapper {
+    padding: rem(45);
+  }
+
+  .card-analysis {
+    .card-body {
+      padding: 30px;
+    }
+
+    .card-title {
+      font-size: rem(30);
+      font-weight: $font-weight-normal;
+      margin-bottom: 0;
+      line-height: rem(41);
+
+      small {
+        font-size: rem(14);
+        position: relative;
+        top: -4px;
+        margin-left: 5px;
+      }
+    }
+
+    .card-text {
+      font-size: rem(12);
+      font-weight: $font-weight-semibold;
+      color: $secondary;
+    }
+
+    span + .media-body {
+      margin-left: 15px;
+    }
+  }
+
+  .card-chart {
+    width: 100%;
+    height: calc(100vh - 280px);
+
+    .card-body {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}

@@ -27,12 +27,8 @@
       "check-whitespace"
     ],
     "no-var-keyword": true,
-    "ter-arrow-parens": [
-      true,
-      "always"
-    ],
     "quotemark": [
-      false,
+      true,
       "single",
       "avoid-escape"
     ],
@@ -78,13 +74,14 @@
     "no-relative-imports": false,
     "no-implicit-dependencies": false,
     "linebreak-style": [
-      true,
+      false,
       "LF"
     ],
     "max-line-length": [
       true,
       {
-        "limit": 120
+        "limit": 120,
+        "check-strings": true
       }
     ],
     "eofline": true,
@@ -97,12 +94,13 @@
       false
     ]
   },
-  "defaultSeverity": "warning",
+  "defaultSeverity": "error",
   "linterOptions": {
     "exclude": [
       "config/**/*.js",
       "node_modules/**/*.ts",
-      "coverage/lcov-report/*.js"
+      "coverage/lcov-report/*.js",
+      "dist/**/*.js"
     ]
   }
 }

@@ -1,0 +1,71 @@
+image: node:12.13-slim
+pipelines:
+  branches:
+    release/staging-admin:
+      - step:
+          caches:
+            - node
+          name: Build artifact
+          script:
+            - npm install --only-production
+            - CI=false npm run build-staging-admin
+          artifacts:
+            - dist/**
+            - dist
+      - step:
+          name: Deploy to S3
+          script:
+            - pipe: atlassian/aws-s3-deploy:0.2.4
+              variables:
+                AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
+                AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
+                AWS_DEFAULT_REGION: 'us-west-2'
+                S3_BUCKET: 'udstaging-admin.devblock.io'
+                LOCAL_PATH: 'dist'
+                ACL: 'public-read'
+                CACHE_CONTROL: 'max-age=3600'
+            - pipe: atlassian/aws-cloudfront-invalidate:0.1.3
+              variables:
+                AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
+                AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
+                AWS_DEFAULT_REGION: 'us-west-2'
+                DISTRIBUTION_ID: $AWS_CF_SADMIN
+                PATHS: '/*' # Optional
+                # DEBUG: "<boolean>" # Optional
+
+    release/staging-client:
+      - step:
+          name: Build artifact
+          caches:
+            - node
+          script:
+            - npm install --only-production
+            - CI=false npm run build-staging-client
+          artifacts:
+            - dist/**
+            - dist
+      - step:
+          name: Deploy to S3
+          script:
+            - pipe: atlassian/aws-s3-deploy:0.2.4
+              variables:
+                AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
+                AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
+                AWS_DEFAULT_REGION: 'us-west-2'
+                S3_BUCKET: 'udstaging-client.devblock.io'
+                LOCAL_PATH: 'dist'
+                ACL: 'public-read'
+                CACHE_CONTROL: 'max-age=3600'
+            - pipe: atlassian/aws-cloudfront-invalidate:0.1.3
+              variables:
+                AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
+                AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
+                AWS_DEFAULT_REGION: 'us-west-2'
+                DISTRIBUTION_ID: $AWS_CF_SCLIENT
+                PATHS: '/*' # Optional
+                # DEBUG: "<boolean>" # Optional
+      # - step:
+      #     name: Tag git version
+      #     script:
+      #       - git tag -a release/staging-client/"$(date +'%Y%m%d.%H%M')"
+      #       - git push --tags

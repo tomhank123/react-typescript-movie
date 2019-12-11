@@ -1,4 +1,6 @@
 .table {
+  font-size: 14px;
+
   th,
   td {
     vertical-align: middle;
@@ -21,31 +23,97 @@
     font-size: rem(12);
     color: $secondary;
     text-transform: uppercase;
+
+    .icon-sort {
+      font-size: rem(14);
+      font-weight: $font-weight-light;
+      margin-left: 5px;
+      cursor: pointer;
+    }
+  }
+
+  td.child {
+    border: 0 none;
   }
 
   tbody {
     background-color: $white;
   }
 
-  &-bordered thead th {
-    border-color: transparent;
-    border-bottom: 1px solid $border-color;
+  &.sortable {
+    th {
+      cursor: pointer;
+    }
+  }
+
+  &-paging {
+    position: relative;
+
+    .form-group-paging {
+      position: absolute;
+      right: 0;
+      top: 0;
+      z-index: 130;
+    }
+  }
+
+  &-parent {
+    > thead > tr > th {
+      border-color: transparent;
+      border-bottom: 1px solid $border-color;
+    }
+
+    > tbody {
+      > tr {
+        > td {
+          border-top: 0 none;
+        }
+
+        &:first-child {
+          > td {
+            border-top: 1px solid $border-color;
+          }
+        }
+      }
+    }
   }
 
   &-bordered {
-    th,
-    td {
-      &:last-child {
-        width: 22%;
-      }
-    }
-
-    td {
+    tbody td {
       border-right-color: $white;
 
       &:last-child {
         border-right-color: $border-color;
       }
     }
+  }
+
+  &-child {
+    background-color: $bg-table-child;
+    box-shadow: $box-shadow-table;
+
+    tbody {
+      background-color: transparent;
+
+      td {
+        border-right-color: $border-secondary-color;
+      }
+    }
+
+    thead th,
+    thead td {
+      border-bottom-width: 1px;
+    }
+  }
+}
+
+.group-table-paging {
+  position: relative;
+
+  .form-group-paging {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
   }
 }

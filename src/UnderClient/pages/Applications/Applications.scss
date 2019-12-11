@@ -1,0 +1,65 @@
+$tableHeight: 41px;
+
+.all-applications-page {
+  .table-fixed {
+    overflow-y: auto;
+    min-height: 300px;
+    max-height: calc(100vh - #{$drawerHeight + $tableHeight});
+
+    > table,
+    .ScrollbarsCustom-Content > table {
+      border: 0 none;
+    }
+
+    &.ScrollbarsCustom {
+      height: calc(100vh - #{$drawerHeight + $tableHeight}) !important;
+    }
+  }
+
+  .table-fixed > table > thead > tr > th,
+  .table-fixed .ScrollbarsCustom-Content > table > thead > tr > th {
+    position: sticky;
+    top: 0;
+    background-color: $bg-main;
+    border: 0 none;
+    z-index: 100;
+
+    &:last-child {
+      border-right: 1px solid $bg-main;
+    }
+  }
+
+  .col-name {
+    .btn {
+      & ~ span {
+        min-height: 32px;
+        display: flex;
+        align-items: center;
+      }
+    }
+  }
+
+  .col-name,
+  .col-form-title {
+    width: 30%;
+  }
+
+  .col-application,
+  .col-form-name {
+    width: 15%;
+  }
+
+  .col-form,
+  .col-contact {
+    width: 15%;
+  }
+
+  .col-status {
+    width: 15%;
+  }
+
+  .col-date {
+    width: 25%;
+    padding-right: 100px !important;
+  }
+}

@@ -144,9 +144,9 @@
   .show > &.dropdown-toggle,
   &.disabled,
   &:disabled {
-    background: $bg-gradient-primary;
-    border-color: $border-primary-color;
-    color: $white;
+    background: $bg;
+    border-color: $border-hover;
+    color: $color-hover;
   }
 
   &:hover,

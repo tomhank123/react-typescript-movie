@@ -1,33 +1,45 @@
-import { Container } from "inversify";
-
-import { UserGateway, UserGatewayImpl } from "./gateways/UserGateway";
+import { Container } from 'inversify';
+import { CognitoGateway, CognitoGatewayImpl } from './gateways/CognitoGateway';
+import { UserGateway, UserGatewayImpl } from './gateways/UserGateway';
+import { Util, UtilImpl } from './helpers/Utils';
+import { AxiosProvider, AxiosProviderImpl } from './providers/AxiosProvider';
+import { CookieProvider, CookieProviderImpl } from './providers/CookieProvider';
 import {
   UserRepository,
   UserRepositoryImpl
-} from "./repositories/UserRepository";
-import { CookieProvider, CookieProviderImpl } from "./providers/CookieProvider";
-import { CognitoGateway, CognitoGatewayImpl } from "./gateways/CognitoGateway";
+} from './repositories/UserRepository';
 
 export const container = new Container();
 
+// Util
+container
+  .bind<Util>('util')
+  .to(UtilImpl)
+  .inSingletonScope();
+
 // Provider
 container
-  .bind<CookieProvider>("cookieProvider")
+  .bind<AxiosProvider>('axiosProvider')
+  .to(AxiosProviderImpl)
+  .inSingletonScope();
+
+container
+  .bind<CookieProvider>('cookieProvider')
   .to(CookieProviderImpl)
   .inSingletonScope();
 
 // User
 container
-  .bind<UserRepository>("userRepository")
+  .bind<UserRepository>('userRepository')
   .to(UserRepositoryImpl)
   .inSingletonScope();
 container
-  .bind<UserGateway>("userGateway")
+  .bind<UserGateway>('userGateway')
   .to(UserGatewayImpl)
   .inSingletonScope();
 
 // Cognito
 container
-  .bind<CognitoGateway>("cognitoGateway")
+  .bind<CognitoGateway>('cognitoGateway')
   .to(CognitoGatewayImpl)
   .inSingletonScope();

@@ -1,0 +1,66 @@
+$widthLogin: 900px;
+
+.login-page {
+  &.layout {
+    background: $bg-login;
+    display: block;
+  }
+
+  .full-height {
+    display: block;
+  }
+
+  .logo {
+    margin-left: -11px;
+    margin-top: -10px;
+  }
+
+  h3 {
+    margin-bottom: 18px;
+    font-size: 24px;
+    font-family: $font-family-base;
+  }
+
+  .login-banner {
+    position: relative;
+    border-radius: 0 4px 4px 0;
+    overflow: hidden;
+    height: 100%;
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background: $bg-login-banner;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background: url('/images/login_Image.png');
+      background-size: cover;
+      background-position: center bottom;
+    }
+
+    .login-banner-body {
+      position: absolute;
+      bottom: 55px;
+      left: 33px;
+      right: 33px;
+      color: $white;
+    }
+  }
+
+  @include media-breakpoint-up(sm) {
+    .modal-dialog {
+      max-width: $widthLogin;
+    }
+  }
+}

@@ -1,0 +1,14 @@
+.layout {
+  background: $backgroundColor;
+}
+
+.content-wrapper {
+  background-color: $bg-main;
+  z-index: 0;
+  transition: margin-left $transition-hide-menu;
+  margin-left: $drawerMenuWidth;
+
+  .hide-main-menu & {
+    margin-left: $hideMenuWidth;
+  }
+}

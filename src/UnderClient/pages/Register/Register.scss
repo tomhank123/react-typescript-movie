@@ -1,0 +1,15 @@
+.terms-module {
+  &.layout {
+    background: $bg-login;
+    display: block;
+  }
+
+  .full-height {
+    display: block;
+  }
+
+  .card-popup .card-title {
+    font-weight: $font-weight-semibold;
+    font-size: rem(16);
+  }
+}

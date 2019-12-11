@@ -23,6 +23,7 @@ $red: #dc3545;
 $orange: #ff9b3f; // #fd7e14;
 $yellow: #fad587; // #ffc107;
 $green: #82ce8d; // #28a745;
+$greenOld: #28a745;
 $teal: #20c997;
 $cyan: #2196ef; // #17a2b8;
 
@@ -40,7 +41,6 @@ $title-color: $gray-900;
 
 $input-color: $body-color;
 $input-border-color: $gray-400;
-$input-placeholder-color: $body-color;
 
 $navbar-light-color: $gray-600;
 
@@ -94,10 +94,10 @@ $border-secondary-color: $gray-300;
 $border-secondary-hover: $gray-300;
 $secondary-light: $secondary;
 
-$font-family-base: "Open Sans", sans-serif;
+$font-family-base: 'Open Sans', sans-serif;
 
 $font-size-base-px: 16;
-$font-size-base: 1rem; // Assumes the browser default, typically `15px`
+$font-size-base: 1rem; // Assumes the browser default, typically `16px`
 
 $font-weight-light: 300 !default;
 $font-weight-normal: 400 !default;
@@ -120,7 +120,6 @@ $h6-font-size: $font-size-base !default;
 $input-btn-padding-y: 0.5rem;
 $input-btn-padding-x: 1.5625rem;
 
-$input-padding-y: 0.625rem;
 $input-padding-x: 1rem;
 
 $bg-gradient-primary: linear-gradient(
@@ -140,10 +139,10 @@ $bg-secondary-hover: rgba($secondary-light, 0.15);
 $input-btn-padding-y: 0.5rem;
 $input-btn-padding-x: 0.9375rem;
 
-$form-feedback-valid-color: $info;
-$form-feedback-invalid-color: $danger;
-$form-feedback-icon-valid: "";
-$form-feedback-icon-invalid: "";
+$form-feedback-valid-color: $greenOld;
+$form-feedback-invalid-color: $red;
+$form-feedback-icon-valid: '';
+$form-feedback-icon-invalid: '';
 
 $bg-gradient-primary: linear-gradient(
   180deg,
@@ -167,5 +166,59 @@ $scrollbar-thumb-bg: $gray-600;
 $scrollbar-thumb-width: 8px;
 $scrollbar-thumb-radius: rem(4);
 
-@import "~bootstrap/scss/functions";
-@import "~bootstrap/scss/variables";
+// stylelint-disable
+$spacer: 1rem !default;
+$spacers: () !default;
+$spacers: map-merge(
+  (
+    0: 0,
+    1: (
+      $spacer * 0.25
+    ),
+    2: (
+      $spacer * 0.5
+    ),
+    3: $spacer,
+    4: (
+      $spacer * 1.5
+    ),
+    5: (
+      $spacer * 3
+    ),
+    20: (
+      $spacer * 1.25
+    ),
+    -2: (
+        $spacer * -0.5
+      ),
+    -20: (
+        $spacer * -1.25
+      )
+  ),
+  $spacers
+);
+
+$spinner-overlay: rgba(0, 0, 0, 0.3);
+$spinner-icon-border: #f3f3f3;
+$spinner-icon-border-top: $primary;
+
+$transition-hide-menu: 0.4s cubic-bezier(0, 0, 0.2, 1) 0ms;
+$hideMenuWidth: 60px;
+
+// PDF Mapping
+$primary-05: rgba($primary, 0.5);
+$primary-03: rgba($primary, 0.3);
+$black-03: rgba($black, 0.3);
+$font-awesome-5: 'Font Awesome 5 Pro';
+$font-awesome-5-icon-check: '\f00c';
+$font-awesome-5-icon-text: '\f031';
+$font-awesome-5-icon-number: '\f163';
+$font-awesome-5-icon-currency: '\f155';
+$font-awesome-5-icon-date: '\f073';
+$font-awesome-5-icon-image: '\f03e';
+$font-awesome-5-icon-signature: '\f5b7';
+$pdf-padding-from-top: 216px;
+
+@import '~bootstrap/scss/functions';
+@import '~bootstrap/scss/variables';
+@import '~bootstrap/scss/mixins';

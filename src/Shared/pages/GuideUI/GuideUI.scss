@@ -1,0 +1,165 @@
+.login-page {
+  background: $bg-login !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+
+  .full-height {
+    overflow: unset;
+    justify-content: center;
+  }
+
+  .jumbotron {
+    position: relative;
+    width: 820px;
+    margin-bottom: 0;
+    padding: 0;
+    background: $white;
+    border-radius: 4px;
+    margin: 3rem 1rem;
+
+    .login-logo {
+      position: absolute;
+      top: -21px;
+      left: 17px;
+      width: 86px;
+      height: 42px;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .login-title {
+      margin-bottom: 18px;
+      font-size: 24px;
+      font-family: $font-family-base;
+    }
+
+    .form-control {
+      padding: 10px;
+      height: 36px;
+
+      &::placeholder {
+        color: $gray-400;
+      }
+    }
+
+    .form-label {
+      color: $gray-600;
+      font-size: 14px;
+    }
+
+    hr {
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+
+    .btn {
+      margin-top: 20px;
+      color: $white;
+      padding: 8px;
+      font-size: 14px;
+      width: 100%;
+      height: 36px;
+    }
+
+    .btn-primary {
+      margin-top: 4px;
+    }
+
+    .btn-secondary {
+      color: $black;
+      margin-top: 0;
+    }
+
+    .col-md-5 {
+      padding: 40px 30px 24px 45px;
+    }
+
+    .col-md-7 {
+      background-repeat: no-repeat;
+      background-size: 100%;
+      padding-left: 0;
+    }
+
+    .link {
+      display: flex;
+      justify-content: center;
+      margin-top: 1rem;
+
+      a {
+        color: $blue;
+        font-size: 14px;
+      }
+    }
+  }
+
+  .login-banner {
+    position: relative;
+    border-radius: 0 4px 4px 0;
+    overflow: hidden;
+    height: 100%;
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background: $bg-login-banner;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background: url('/images/login_Image.png');
+      background-size: cover;
+      background-position: center bottom;
+    }
+
+    .login-banner-body {
+      position: absolute;
+      width: calc(100% - 66px);
+      bottom: 55px;
+      left: 33px;
+      color: $white;
+
+      .login-banner-title {
+        font-size: 24px;
+        font-family: $font-family-base;
+      }
+
+      .login-banner-text {
+        margin: 0;
+        font-family: $font-family-base;
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+@media (max-width: 767.98px) {
+  .col-md-5 {
+    padding-right: 45px !important;
+  }
+}
+
+@media (max-width: 992px) {
+  .login-page {
+    .full-height {
+      width: 100%;
+      padding: 1rem;
+
+      .jumbotron {
+        width: 100%;
+        margin: 0;
+      }
+    }
+  }
+}

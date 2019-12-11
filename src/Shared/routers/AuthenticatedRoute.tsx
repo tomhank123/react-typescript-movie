@@ -1,31 +1,19 @@
-import * as React from "react";
-import { Redirect, Route } from "react-router-dom";
-import { ACCESS_TOKEN } from "Shared/constants/cookieKey";
-import { CookieProvider } from "Shared/providers/CookieProvider";
-import { useInjection } from "Shared/providers/DependencyInjectionProvider";
-import { ROUTE_LOGIN } from "Shared/routers/routes";
-import { RouteProps } from "Shared/types/routeProps";
+import * as React from 'react';
+import { Redirect } from 'react-router-dom';
+import { ACCESS_TOKEN } from 'Shared/constants/cookieKey';
+import { CookieProvider } from 'Shared/providers/CookieProvider';
+import { useInjection } from 'Shared/providers/DependencyInjectionProvider';
+import { AuthenticatedRouteProps } from 'Shared/types/routeProps';
+import BaseRoute from './BaseRoute';
 
-export const AuthenticatedRoute = (props: RouteProps) => {
-  const cookieProvider = useInjection<CookieProvider>("cookieProvider");
-
-  const { path, componentPath, exact = true } = props;
+export const AuthenticatedRoute = (props: AuthenticatedRouteProps) => {
+  const cookieProvider = useInjection<CookieProvider>('cookieProvider');
 
   if (!cookieProvider.has(ACCESS_TOKEN)) {
-    return <Redirect to={{ pathname: ROUTE_LOGIN }} />;
+    return <Redirect to={{ pathname: props.loginRoute }} />;
   }
 
-  const ComponentRoute = React.lazy(() => import(`src/${componentPath}`));
-
-  return (
-    <Route
-      exact={exact}
-      path={path}
-      render={() => (
-        <React.Suspense fallback={<div>Loading...</div>}>
-          <ComponentRoute />
-        </React.Suspense>
-      )}
-    />
-  );
+  return <BaseRoute {...props} />;
 };
+
+export default AuthenticatedRoute;

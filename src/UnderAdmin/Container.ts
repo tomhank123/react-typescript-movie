@@ -1,12 +1,12 @@
-import { container } from "src/Shared/SharedContainer";
+import { container } from 'src/Shared/SharedContainer';
 import {
   HomeRepository,
   HomeRepositoryImpl
-} from "./repositories/HomeRepository";
+} from './repositories/HomeRepository';
 
 // Home
 container
-  .bind<HomeRepository>("homeRepository")
+  .bind<HomeRepository>('homeRepository')
   .to(HomeRepositoryImpl)
   .inSingletonScope();
 

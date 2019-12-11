@@ -1,0 +1,114 @@
+$heightInviteTeam: 245px;
+
+.team-management-module {
+  .card-invite {
+    .card-body {
+      padding: 30px;
+    }
+
+    .card-title {
+      font-size: rem(14);
+      font-weight: $font-weight-semibold;
+    }
+
+    .card-subtitle {
+      font-size: rem(15);
+      font-weight: $font-weight-normal;
+    }
+
+    input {
+      width: 500px;
+    }
+  }
+
+  .table-fixed {
+    overflow-y: auto;
+    min-height: 300px;
+    max-height: calc(100vh - #{$drawerHeight + $heightInviteTeam});
+
+    > table,
+    .ScrollbarsCustom-Content > table {
+      border: 0 none;
+    }
+
+    &.ScrollbarsCustom {
+      height: calc(100vh - #{$drawerHeight + $heightInviteTeam}) !important;
+    }
+  }
+
+  .table-paging .form-group-paging {
+    position: sticky;
+    right: 0;
+    top: 0;
+    z-index: 130;
+    margin-top: -37px;
+    margin-left: auto;
+    justify-content: flex-end;
+    margin-bottom: 0;
+    max-width: 150px;
+    white-space: nowrap;
+    flex-wrap: nowrap;
+  }
+
+  .table-fixed > table > thead > tr > th,
+  .table-fixed .ScrollbarsCustom-Content > table > thead > tr > th {
+    position: sticky;
+    top: 0;
+    background-color: $bg-main;
+    border: 0 none;
+    z-index: 100;
+
+    &:last-child {
+      border-right: 1px solid $bg-main;
+    }
+  }
+
+  .col-full-name {
+    width: 18%;
+  }
+
+  .col-email {
+    width: 27%;
+
+    .tooltip-content {
+      width: 100%;
+      max-width: 300px;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      display: inline-block;
+      overflow: hidden;
+      min-height: 20px;
+    }
+  }
+
+  .col-role {
+    width: 11%;
+  }
+
+  .col-create-at {
+    width: 12%;
+  }
+
+  .col-status {
+    width: 12%;
+    text-align: center;
+  }
+
+  .col-action {
+    width: 20%;
+  }
+}
+
+.swal-popup-invite-member {
+  .table {
+    font-size: rem(15);
+
+    tr {
+      &:first-child {
+        td {
+          border-top: 0 none;
+        }
+      }
+    }
+  }
+}

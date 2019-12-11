@@ -1,1 +1,14 @@
-export const ACCESS_TOKEN = "ac";
+export const ACCESS_TOKEN = 'ac';
+export const USER_EMAIL = 'workEmail';
+export const USER_ID = 'userId';
+export const USER_PHONE = 'phone';
+export const USER_FIRST_NAME = 'firstName';
+export const USER_LAST_NAME = 'lastName';
+export const USER_COMPANY_NAME = 'companyName';
+export const USER_VALIDATION_DATA = 'validationData';
+export const USER_INVITAION_CODE = 'invitaionCode';
+export const SESSION_CODE = 'sessionCode';
+export const SECURITY_LOGIN = 'securityLogin';
+export const COMPANY_ID = 'companyId';
+export const USER_ROLE = 'userRole';
+export const USER_STATUS = 'userStatus';

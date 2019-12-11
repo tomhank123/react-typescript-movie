@@ -1,0 +1,30 @@
+$card-popup-width: 500px;
+$card-logo-top: -20px;
+$card-logo-left: -11px;
+
+.card-popup {
+  position: relative;
+  width: $card-popup-width;
+  padding: 40px 60px;
+  border: 0;
+
+  .card-logo {
+    margin-top: $card-logo-top;
+    margin-left: $card-logo-left;
+    border-radius: $border-radius;
+  }
+
+  .card-title {
+    font-weight: $font-weight-semibold;
+    color: $title-color;
+    font-size: rem(20);
+    line-height: 27px;
+  }
+
+  .card-subtitle {
+    font-weight: $font-weight-normal;
+    color: $title-color;
+    font-size: rem(15);
+    line-height: 27px;
+  }
+}

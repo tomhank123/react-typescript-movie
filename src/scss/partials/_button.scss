@@ -27,8 +27,52 @@
     width: 32px;
     height: 32px;
     padding: 2px 10px;
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
+
+    [class*='fa-'] {
+      transition: 0.3s;
+    }
+
+    &.open {
+      [class*='fa-'] {
+        transform: rotate(-180deg);
+      }
+    }
+  }
+}
+
+.btn-status {
+  border-radius: $rounded-pill;
+  color: $white;
+
+  &:hover,
+  &:focus,
+  &:active,
+  &:visited {
+    cursor: context-menu !important;
+    color: $white !important;
+    box-shadow: none !important;
+
+    &.btn-warning {
+      background-color: $warning !important;
+    }
+
+    &.btn-success {
+      background-color: $success !important;
+    }
+
+    &.btn-danger {
+      background-color: $danger !important;
+    }
+
+    &.btn-secondary {
+      background-color: $secondary !important;
+    }
+
+    &.btn-primary {
+      background-color: $primary !important;
+    }
   }
 }

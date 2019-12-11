@@ -1,0 +1,13 @@
+.ScrollbarsCustom-TrackY {
+  border-radius: $scrollbar-track-radius !important;
+  background: $scrollbar-track-bg !important;
+  width: $scrollbar-track-width !important;
+  height: $scrollbar-track-height !important;
+  top: 0 !important;
+  right: 0 !important;
+}
+
+.ScrollbarsCustom-ThumbY {
+  background: $scrollbar-thumb-bg !important;
+  border-radius: $scrollbar-thumb-radius !important;
+}

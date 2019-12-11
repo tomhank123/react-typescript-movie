@@ -1,11 +1,7 @@
-import { History, Location } from 'history';
+import { RouteComponentProps } from 'react-router';
 
 export interface Match {
   params: any;
 }
 
-export interface PropsBase {
-  history: History;
-  location: Location;
-  match: Match;
-}
+export interface PropsBase extends RouteComponentProps<any> {}

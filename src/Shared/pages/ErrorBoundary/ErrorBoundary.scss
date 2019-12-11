@@ -1,0 +1,37 @@
+.u500-module {
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  .img-logo {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+  }
+
+  .modal-content {
+    border: 0 none;
+  }
+
+  .img-rain {
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    left: 50%;
+    transform: translate(-15%, -40%);
+  }
+
+  .img-500 {
+    position: relative;
+    z-index: 1;
+  }
+
+  details {
+    font-size: rem(12);
+  }
+
+  @include media-breakpoint-up(sm) {
+    .modal-dialog {
+      max-width: 600px;
+    }
+  }
+}

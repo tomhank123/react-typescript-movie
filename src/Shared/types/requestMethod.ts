@@ -1,1 +1,1 @@
-export type RequestMethod = "HEAD" | "GET" | "POST" | "PUT" | "DELETE";
+export type RequestMethod = 'HEAD' | 'GET' | 'POST' | 'PUT' | 'DELETE';

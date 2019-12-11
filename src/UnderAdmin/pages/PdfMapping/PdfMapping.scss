@@ -1,0 +1,58 @@
+.hide {
+  display: none;
+}
+
+.prevent-event {
+  pointer-events: none;
+}
+
+.create-template-block {
+  position: absolute;
+  right: 1.5rem;
+}
+
+.step-upload-pdf {
+  display: flex;
+
+  .step-item {
+    margin-left: 30px;
+    display: flex;
+
+    .icon-step {
+      position: relative;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: $gray-400;
+
+      &::before {
+        position: absolute;
+        text-align: center;
+        content: $font-awesome-5-icon-check;
+        font-family: $font-awesome-5;
+        color: $secondary;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      &.active {
+        background: $primary;
+
+        &::before {
+          color: $white;
+        }
+      }
+    }
+
+    .step-name {
+      display: flex;
+      align-items: center;
+      margin-left: 10px;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}

@@ -1,5 +1,5 @@
-import { injectable } from "inversify";
-import { State } from "UnderAdmin/pages/Home/types";
+import { injectable } from 'inversify';
+import { State } from 'UnderAdmin/pages/Home/types';
 
 export interface HomeRepository {
   increase(currentValue: number): State;
